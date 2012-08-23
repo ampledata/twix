@@ -1,5 +1,5 @@
 <setup>
-    <block title="Welcome to the Twitter App">
+    <block title="Welcome to twix">
         <text><![CDATA[
 To start indexing Twitter's sample stream please:<br/>
 <strong>
@@ -16,7 +16,7 @@ To start indexing Twitter's sample stream please:<br/>
         </input>
     </block>
     
-    <block title="Enable Twitter scripted input" endpoint="data/inputs/script" entity=".%252Fbin%252Ftwitter_stream.py">
+    <block title="Enable Twitter scripted input" endpoint="data/inputs/script" entity=".%252Fbin%252Ftwix_stream.py">
         <input field="interval">
             <label>Restart Interval (sec)</label>
             <type>text</type>
