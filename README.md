@@ -1,19 +1,15 @@
-# Splunk-Twitter Connector
+# twix - Twitter Pix
 
 This app provides a scripted input for [Splunk](http://www.splunk.com/) that
 automatically extracts tweets from [Twitter](https://twitter.com/)'s [1% sample
-stream](https://dev.twitter.com/docs/api/1/get/statuses/sample). It is tested on
-Splunk 4.3.2.
+stream](https://dev.twitter.com/docs/api/1/get/statuses/sample).
 
 A number of dashboards and searches are also included to demonstrate how Splunk
 can be used to visualize Twitter activity.
 
 ## Installation
 
-* Install the app by copying the `twitter` directory to
-  `$SPLUNK_HOME/etc/apps/twitter`.
-
-* (Re)start Splunk so that the app is recognized.
+# Install from Splunk Base
 
 * In the Splunk web interface, from the App menu, select the Twitter app. And
   press "Continue to app setup page".
@@ -54,3 +50,11 @@ Displays the locations of tweets on a map.
 
 This software is licensed under the Apache License 2.0. Details can be found in
 the file LICENSE.
+
+## Author
+
+Greg Albrecht <mailto:gba@splunk.com>
+
+## Source
+
+https://github.com/ampledata/twix
