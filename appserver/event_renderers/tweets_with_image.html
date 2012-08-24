@@ -1,0 +1,28 @@
+<%page args="job, event, request, options" />
+
+<%def name="get_img_url(event)">
+    <%
+    return str(event.fields.get('entities.urls{}.display_url'))
+    %>
+</%def>
+
+<%def name="get_thumb(img_url)">
+    <% 
+    thumb = img_url
+
+    if 'twitpic' in img_url:
+        thumb = 'http://twitpic.com/show/thumb/%s' % img_url.split('/')[-1]
+    elif 'tweetphoto' in img_url:
+        thumb = 'http://TweetPhotoAPI.com/api/TPAPI.svc/imagefromurl?size=thumbnail&url=%s' % img_url
+    elif 'pikchur' in img_url or img_url.startswith('pk.gd/'):
+        thumb = 'http://img.pikchur.com/pic_%s_t.jpg' % img_url.split('/')[-1]
+    elif 'yfrog' in img_url and img_url.endswith('j'):
+        thumb = 'http://' + img_url + '.th.jpg'
+    elif 'instagr' in img_url:
+        thumb = 'http://' + img_url + '/media/?size=m'
+
+    return thumb
+    %>
+</%def>
+
+<img src="${get_thumb(get_img_url(event))}">

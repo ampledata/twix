@@ -4,3 +4,8 @@
     background-image: url(appLogo_white_splunkpowered.png);
     background-repeat: no-repeat;
 }
+
+.EventsViewer .splEvent-tweets_with_image {
+  clear: none;
+  float: left;
+}

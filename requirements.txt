@@ -13,4 +13,4 @@ nose
 flake8
 coverage
 clonedigger
-httplib2
+mako
