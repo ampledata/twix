@@ -1,14 +1,24 @@
+<!--
+Event Renderer for tweets_with_image from twix.
+
+Source:: https://github.com/ampledata/tiwx
+Author:: Greg Albrecht <gba@gregalbrecht.com>
+Copyright:: Copyright 2012 Greg Albrecht
+License:: Apache License 2.0
+-->
+
+
 <%page args="job, event, request, options" />
 
 <%def name="get_img_url(event)">
     <%
-    return str(event.fields.get('entities.urls{}.display_url'))
+    return event.fields.get('image_url')
     %>
 </%def>
 
 <%def name="get_thumb(img_url)">
     <% 
-    thumb = img_url
+    thumb = str(img_url)
 
     if 'twitpic' in img_url:
         thumb = 'http://twitpic.com/show/thumb/%s' % img_url.split('/')[-1]
@@ -17,12 +27,22 @@
     elif 'pikchur' in img_url or img_url.startswith('pk.gd/'):
         thumb = 'http://img.pikchur.com/pic_%s_t.jpg' % img_url.split('/')[-1]
     elif 'yfrog' in img_url and img_url.endswith('j'):
-        thumb = 'http://' + img_url + '.th.jpg'
+        thumb = img_url + '.th.jpg'
     elif 'instagr' in img_url:
-        thumb = 'http://' + img_url + '/media/?size=m'
+        if '/' in thumb[:-1]:
+            join_char = ''
+        else:
+            join_char = '/'
+        thumb = img_url + join_char + 'media/?size=m'
+
+    if not 'http' in thumb:
+        thumb = ''.join(['http://', thumb])
 
     return thumb
     %>
 </%def>
 
-<img src="${get_thumb(get_img_url(event))}">
+<% image_url = get_img_url(event) %>
+% if image_url is not None:
+    <a border=0 href="${str(image_url)}"><img src="${get_thumb(str(image_url))}"></a>
+% endif

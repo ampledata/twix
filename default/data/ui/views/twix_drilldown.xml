@@ -1,4 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
+<!--
+Source:: https://github.com/ampledata/twix
+Author:: Greg Albrecht <gba@gregalbrecht.com>
+Copyright:: Copyright 2012 Greg Albrecht
+License:: Apache License 2.0
+-->
+
+
 <form>
   <label>Twitter Per-User Activity</label>
   <fieldset>

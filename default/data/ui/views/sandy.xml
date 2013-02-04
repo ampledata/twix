@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<view template="dashboard.html">
+  <module name="HiddenSavedSearch" autoRun="True" layoutPanel="panel_row1_col1">
+    <param name="savedSearch">sandy</param>
+    <module name="EventsViewer">
+      <param name="count">50</param>
+      <param name="enableBehavior">False</param>
+      <param name="enableEventActions">False</param>
+      <param name="enableFieldActions">False</param>
+      <param name="enableTermSelection">False</param>
+      <param name="maxLines">0</param>
+    </module>
+  </module>
+</view>

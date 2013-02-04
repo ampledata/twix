@@ -1,3 +1,11 @@
+<!--
+Source:: https://github.com/ampledata/twix
+Author:: Greg Albrecht <gba@gregalbrecht.com>
+Copyright:: Copyright 2012 Greg Albrecht
+License:: Apache License 2.0
+-->
+
+
 <nav>
     <view name="flashtimeline" default='true' />
     <collection label="Image Types">
